@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="btn-group">
+        <a href="/Scholar/master/3" class ="block fade-in" >박준홍</a>
+        <a href="/Scholar/master/4" class ="block fade-in" >김수종</a>
+        <a href="/Scholar/master/5" class ="block fade-in" >전민건</a>
+        <a href="/Scholar/master/14" class ="block fade-in">신지수</a>
+        <a href="/Scholar/master/18" class ="block fade-in" >이동욱</a>
+        <a href="/Scholar/master/20" class ="block fade-in" >김재훈</a>
+        </div>
+
+        <div class="mainblock fade-in">
+        {% for scholarly in relation_list %}
+        <ul class="pub-box">
+            <li class="main">{{scholarly.paperid.title}}</li>
+            <li class="sub">{{scholarly.paperid.author}}</li>
+            <li class="sub">{{scholarly.paperid.year}}</li>
+            <li class="sub">{{scholarly.personid.name}}</li>
+        </ul>
+            {%endfor%}
+            </div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="btn-group">
+        <a href="/Scholar/professor/1" class ="block fade-in" >서동만</a>
+        <a href="/Scholar/professor/2" class ="block fade-in">전수빈</a>
+        </div>
+
+        <div class="mainblock fade-in">
+        {% for scholarly in relation_list %}
+        <ul class="pub-box">
+            <li class="main">{{scholarly.paperid.title}}</li>
+            <li class="sub">{{scholarly.paperid.author}}</li>
+            <li class="sub">{{scholarly.paperid.year}}</li>
+            <li class="sub">{{scholarly.personid.name}}</li>
+        </ul>
+            {%endfor%}
+            </div>
+{% endblock %}

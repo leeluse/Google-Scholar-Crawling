@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DCU Software System lab</title>
+  <link rel="icon" href="/static/image/icon1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Dosis:wght@500&family=Lobster&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Dosis:wght@500&family=Lobster&family=Nanum+Gothic&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" integrity="sha512-f8mwTB+Bs8a5c46DEm7HQLcJuHMBaH/UFlcgyetMqqkvTcYg4g5VXsYR71b3qC82lZytjNYvBj2pf0VekA9/FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href = "{% static "../static/css/main.css" %}"  image="all" >
+    <script defer src= "{% static "../static/js/main.js" %}" ></script>
+
+
+</head>
+
+
+<body class="back">
+   <!-- 사이트의 헤더 -->
+
+   <header>
+
+    <div class="inner">
+      <a href="/" class="logo">
+      <img src= "/static/image/logo.png" alt="snslab">
+      </a>
+
+
+      <ul class="menu">
+        <li><a href="http://snslab.cu.ac.kr/">SnSLab</a></li>
+        <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+        </ul>
+    </div>
+
+  </header>
+
+    <section>
+    {% block content %}
+        <div class="main-btn-group">
+        <a href="/Scholar/professor/1" class ="block fade-in" >지도교수</a>
+        <a href="/Scholar/master/3" class ="block fade-in">석사과정</a>
+        <a href="/Scholar/bachelor/6" class ="block fade-in">학사과정</a>
+        <a href="/Scholar/graduate/21" class ="block fade-in">졸업생</a>
+        </div>
+    {% endblock %}
+
+    </section>
+</body>
+</html>

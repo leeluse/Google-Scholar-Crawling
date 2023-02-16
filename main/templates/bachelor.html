@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="btn-group flex-box">
+        <a href="/Scholar/bachelor/6" class ="block fade-in" >김유리</a>
+        <a href="/Scholar/bachelor/7" class ="block fade-in" >김유진</a>
+        <a href="/Scholar/bachelor/8" class ="block fade-in" >조혜원</a>
+        <a href="/Scholar/bachelor/9" class ="block fade-in" >김수정</a>
+        <a href="/Scholar/bachelor/10" class ="block fade-in" >이예지</a>
+        <a href="/Scholar/bachelor/11" class ="block fade-in" >권혁규</a>
+        <a href="/Scholar/bachelor/12" class ="block fade-in" >박성주</a>
+        <a href="/Scholar/bachelor/13" class ="block fade-in" >김보경</a>
+        <a href="/Scholar/bachelor/14" class ="block fade-in" >신지수</a>
+        <a href="/Scholar/bachelor/15" class ="block fade-in" >송희재</a>
+        <a href="/Scholar/bachelor/16" class ="block fade-in" >김동현</a>
+        <a href="/Scholar/bachelor/17" class ="block fade-in" >노동원</a>
+        </div>
+
+        <div class="mainblock flex-box">
+        {% for scholarly in relation_list %}
+        <ul class="pub-box">
+            <li class="main">{{scholarly.paperid.title}}</li>
+            <li class="sub">{{scholarly.paperid.author}}</li>
+            <li class="sub">{{scholarly.paperid.year}}</li>
+            <li class="sub">{{scholarly.personid.name}}</li>
+        </ul>
+            {%endfor%}
+            </div>
+{% endblock %}
