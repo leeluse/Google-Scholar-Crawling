@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "main.apps.MainConfig"
+    "main.apps.MainConfig",
+    "django_crontab"
+
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,8 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+#crontab 매주 월요일 0:0 크롤링 업데이트
+CRONJOBS = [
+    ('0 0 * * 1', 'main.cron.crawlingfunction'),
+]

@@ -27,3 +27,4 @@ urlpatterns = [
     path("Scholar/graduate/<int:id>", views.scholar_graduate_view),
 
 ]
+

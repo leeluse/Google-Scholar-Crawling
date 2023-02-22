@@ -10,7 +10,6 @@ def main_view(request):
 
 def scholar_professor_view(request,id):
     relation_list = RelationList.objects.filter(personid=id).select_related('paperid').all()
-
     return render(request, 'professor.html', {'relation_list': relation_list})
 
 def scholar_bachelor_view(request,id):
