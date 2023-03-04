@@ -1,10 +1,14 @@
 from scholarly import scholarly
 import pymysql
+from scholarly import scholarly, ProxyGenerator
 
-
-
+pg = ProxyGenerator()
+success = pg.FreeProxies()
 def crawlingfunction():
+    scholarly.use_proxy(pg)
+
     # MySQL Connection 연결
+    print('start update')
     conn = pymysql.connect(host='localhost', user='leesuyeon', password='tndus0385',
                            db='crawling', charset='utf8')  # 한글처리 (charset = 'utf8')
     # 커서 생성
@@ -35,6 +39,8 @@ def crawlingfunction():
                 pub_author = pub['bib']['author']
                 cursor.execute(
                     f"INSERT IGNORE INTO scholar_list (Year, Title, Author) VALUES(\"{pub_year}\",\"{pub_title}\",\"{pub_author}\")")
+                print(pub_title)
+
 
     sql = "INSERT IGNORE INTO relation_list (PersonID, PaperID) SELECT %s, ID FROM scholar_list WHERE scholar_list.Author REGEXP (%s)"
     val = [(1, 'Dongmahn Seo|서동만|Dong-Mahn Seo|DM Suh|DM Seo|D Seo|DMS|Dong Mahn Seo|Dong-Man Seo'),
@@ -74,4 +80,3 @@ def crawlingfunction():
 
     # 연결 종료
     conn.close()
-

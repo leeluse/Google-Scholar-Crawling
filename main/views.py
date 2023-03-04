@@ -2,6 +2,9 @@ from urllib import request
 
 from django.shortcuts import render
 
+
+
+
 # 모델 불러오기 import
 from .models import RelationList
 

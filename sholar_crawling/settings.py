@@ -39,9 +39,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "main.apps.MainConfig",
-    "django_crontab"
+    "django_apscheduler"
 
 ]
+
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+APSCHEDULER_RUN_NOW_TIMEOUT = 25
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -134,8 +137,3 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-#crontab 매주 월요일 0:0 크롤링 업데이트
-CRONJOBS = [
-    ('0 0 * * 1', 'main.cron.crawlingfunction'),
-]
