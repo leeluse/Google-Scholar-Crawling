@@ -8,7 +8,7 @@
 - 논문 리스트 목록  제공
 - snslab 홈페이지 이동 기능
 
-## 🙇🏻 개발
+## 👩‍💻 개발
 
 ### Develop Environment
 
